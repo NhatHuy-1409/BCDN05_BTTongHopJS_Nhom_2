@@ -1,0 +1,27 @@
+.btn-secondary{
+    color:$color-dark-3;
+    background-color:$color-white-3;
+    border-color:$color-white-1;
+    font-size:$fs2;
+    &:hover{
+        color:$color-blue-1;
+        background-color:$color-white-3;
+        border-color:$color-white-3;
+    }
+    
+}
+.btn-secondary.dropdown-toggle{
+    color:$color-dark-4;
+    background-color:$color-white-3;
+    border-color:$color-white-3;
+}
+.btn-secondary.dropdown-toggle:focus{
+    color:$color-dark-4;
+    background-color:$color-white-3;
+    border-color:$color-white-3; 
+}
+.oder{
+    a{
+        color: $color-dark-3;
+    }
+}

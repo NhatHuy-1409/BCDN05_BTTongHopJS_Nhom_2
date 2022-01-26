@@ -1,0 +1,51 @@
+.container__logo{
+    padding: 22px 0;
+    a{
+        float: left;
+    }
+    ul{
+        float: right;
+        font-size: 13px !important;
+        text-decoration: none;           
+        text-transform: uppercase;
+        padding: 13px 37px;
+        position: relative;
+        
+        li{
+            a{
+                color:$color-dark-3 !important;
+                font-weight:$fw2;
+                &:hover{
+                    color: $color-blue-1 !important;
+                }
+            }
+        }
+    }
+}
+.hearder__top{
+    padding-bottom: 80px;
+}
+.col-right{
+    display: flex;
+}.hearder__search{
+    width: 100%;
+    .form-control{
+        width:90%;
+        border:2px solid $color-blue-1;
+        border-radius: 0;
+        
+    }
+    .form-inline{
+        button{
+            border-color: $color-blue-1; 
+            background: $color-blue-1;
+            color: $color-white-1;
+            border-radius:0;
+        }
+    }
+}
+.hearder__cart{
+    .cart__icon{
+        display: flex;
+    }
+}

@@ -12,8 +12,8 @@ html, body {
 }
 
 img {
-  display: block;
   max-width: 100%;
+  height: auto;
 }
 
 li {
@@ -26,5 +26,157 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+.wrapContent {
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  color: #181818;
+  font-size: 13px;
+  line-height: 1.428571429;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.btn-secondary {
+  color: #363f4d;
+  background-color: #f9f9f9;
+  border-color: #ffffff;
+  font-size: 13px;
+}
+
+.btn-secondary:hover {
+  color: #2e6ed5;
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+.btn-secondary.dropdown-toggle {
+  color: #212529;
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+.btn-secondary.dropdown-toggle:focus {
+  color: #212529;
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+.oder a {
+  color: #363f4d;
+}
+
+#top {
+  padding-top: 4px;
+  margin: 0 -95px;
+  height: 45px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ebebeb;
+}
+
+#top .container {
+  width: 100%;
+}
+
+#top .container .box__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+}
+
+#top .container .box__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  line-height: 40px;
+}
+
+#top .container .box__right .support {
+  padding-right: 15px;
+}
+
+#top .container .box__right .oder {
+  padding-right: 15px;
+}
+
+.dropdown-menu a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown-menu a img {
+  margin-right: 10px;
+}
+
+.container__logo {
+  padding: 22px 0;
+}
+
+.container__logo a {
+  float: left;
+}
+
+.container__logo ul {
+  float: right;
+  font-size: 13px !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 13px 37px;
+  position: relative;
+}
+
+.container__logo ul li a {
+  color: #363f4d !important;
+  font-weight: 500;
+}
+
+.container__logo ul li a:hover {
+  color: #2e6ed5 !important;
+}
+
+.hearder__top {
+  padding-bottom: 80px;
+}
+
+.col-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hearder__search {
+  width: 100%;
+}
+
+.hearder__search .form-control {
+  width: 90%;
+  border: 2px solid #2e6ed5;
+  border-radius: 0;
+}
+
+.hearder__search .form-inline button {
+  border-color: #2e6ed5;
+  background: #2e6ed5;
+  color: #ffffff;
+  border-radius: 0;
+}
+
+.hearder__cart .cart__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carousel {
+  padding-top: 30px;
 }
 /*# sourceMappingURL=main.css.map */

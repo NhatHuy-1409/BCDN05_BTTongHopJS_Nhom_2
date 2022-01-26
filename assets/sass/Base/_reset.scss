@@ -9,8 +9,9 @@ html,body{
     color: $color-dark-1;
 }
 img {
-    display: block;
+    // display: block;
     max-width: 100%;
+    height: auto;
 }
 li {
     list-style: none;
@@ -20,4 +21,17 @@ a{
 }
 a:hover {
     text-decoration: none;
+}
+.wrapContent{
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    font-weight:$fw1;
+    color: $color-dark-2;
+    font-size:$fs2;
+    line-height: 1.428571429;
+}
+@media (min-width: 1200px){
+    .container{
+        max-width: 1200px;
+    }
 }
