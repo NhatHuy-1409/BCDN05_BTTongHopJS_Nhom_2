@@ -22,6 +22,252 @@
 </head>
 
 <body>
+    <div class="wrapper row">
+        <!-- menu -->
+        <nav class="navbar navbar-expand-lg col-12">
+            <div class="container-fluid">
+                <a class="navbar-logo" href="#">
+                    <i class="fas fa-align-left" id="sidebarCollapse"></i>
+                    <span>DASHBOARD</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#btn-search-header"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="btn-search-header">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn my-2 my-sm-0" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+
+                    </form>
+                </div>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            <img src="https://demos.creative-tim.com/vue-black-dashboard/img/anime3.png" alt="">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Log out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Sidebar  -->
+        <nav class="sidebar-menu col-2">
+            <div class="sidebar-header" id="sidebarCollapse">
+                <span>ADMIN CYBERPHONE</span>
+            </div>
+            <ul class="sidebar-list  ">
+                <li class="active sidebar-item ">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse subMenu" id="homeSubmenu">
+                        <li class="sidebar-item ">
+                            <a href="./kk.html">List</a>
+                        </li>
+                        <li class="sidebar-item ">
+                            <a href="#">Thêm</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        Profile
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#">
+                        <i class="fa fa-user-astronaut"></i> User profile
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#">
+                        <i class="fa fa-table"></i>
+                        Table
+                    </a>
+                </li>
+                <li class="sidebar-item ">
+                    <a href="#">
+                        <i class="fa fa-american-sign-language-interpreting"></i> Setting
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div class="content ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tableSP">
+                        <h3>Product List</h3>
+                        <div class="row">
+                            <div class="col-8">
+                                <button id="btnThem" type="button" class="btn mb-3 " data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    <i class="fa fa-plus-circle"></i>
+                                    Add Product
+                                </button>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Img</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Screen</th>
+                                    <th scope="col">BackCamera</th>
+                                    <th scope="col">FrontCamera</th>
+                                    <th scope="col">Desc</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableProduct">
+                                <tr>
+                                    <td> 1</td>
+                                    <td>iphoneX</td>
+                                    <td>1000</td>
+                                    <td>screen 68</td>
+                                    <td>2 camera 12 MP</td>
+                                    <td>7 MP</td>
+                                    <td>Img</td>
+                                    <td>Thiết kế mang tính đột phá</td>
+                                    <td>iphone</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <th>iphoneX</th>
+                                    <th>1000</th>
+                                    <th>screen 68</th>
+                                    <th>2 camera 12 MP</th>
+                                    <th>7 MP</th>
+                                    <th>Img</th>
+                                    <th>Thiết kế mang tính đột phá</th>
+                                    <th>iphone</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" id="phoneForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phoneID">ID</label>
+                                    <input type="text" class="form-control" id="phoneID" placeholder="Input ID" value=""
+                                        required>
+                                    <div id="invalidID" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phoneName"> Phone Name</label>
+                                    <input type="text" class="form-control" id="phoneName"
+                                        placeholder="Input phone name" required>
+                                    <div id="invalidTen" class="invalid-form">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="typePhone">Type Phone</label>
+                                    <select class="custom-select d-block w-100" id="typePhone" required>
+                                        <option value="">Choose type</option>
+                                        <option value="loai1">Iphone</option>
+                                        <option value="loai2">SamSung</option>
+                                    </select>
+                                    <div id="invalidLoai" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="pricePhone">Price phone</label>
+                                    <input type="text" class="form-control" id="pricePhone"
+                                        placeholder="Input price phone" value="" required>
+                                    <div id="invalidGia" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="screenPhone">Screen phone</label>
+                                    <input type="text" class="form-control" id="screenPhone"
+                                        placeholder="Input screen phone" value="" required>
+                                    <div id="invalidGia" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="backCam">Back Camera</label>
+                                    <input type="text" class="form-control" id="backCam" placeholder="Input back camera"
+                                        value="" required>
+                                    <div id="invalidGia" class="invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="frontCam">Front Camera</label>
+                                    <input type="text" class="form-control" id="backCam"
+                                        placeholder="Input front camera" value="" required>
+                                    <div id="invalidGia" class="invalid-feedback">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-group">
+
+                                    <label for="imgPhone">Img Product</label>
+                                    <input type="text" class="form-control" id="imgPhone" placeholder="Input link image"
+                                        value="" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="descPhone">Describe</label>
+                                <textarea class="form-control" id="descPhone" rows="3"></textarea>
+                                <div id="invalidMoTa" class="invalid-form">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-modal" id="btnCapNhat">Cập Nhật</button>
+                        <button type="button" class="btn btn-modal" id="btnThemMon">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 
 
@@ -32,6 +278,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#sidebarCollapse').on('click', function () {
+                $('.sidebar-menu').toggleClass('active');
+                $('.content').toggleClass('active');
+            });
+
+        });
+    </script>
+    <script type="module" src="../controllers/admin.js"></script>
 </body>
 
 </html>
