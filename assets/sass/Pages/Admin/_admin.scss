@@ -258,3 +258,18 @@
 
     }
 }
+@media (max-width: 575px) {
+    .wrapper{
+        .navbar{
+            #btn-search-header{
+                display: none;
+            }
+            .navbar-logo{
+                left: 0;
+            }
+            .container-fluid{
+                justify-content: flex-end;
+            }
+        }
+    }
+}

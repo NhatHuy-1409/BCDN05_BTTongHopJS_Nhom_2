@@ -519,4 +519,18 @@ a:hover {
     display: flex;
   }
 }
+
+@media (max-width: 575px) {
+  .wrapper .navbar #btn-search-header {
+    display: none;
+  }
+  .wrapper .navbar .navbar-logo {
+    left: 0;
+  }
+  .wrapper .navbar .container-fluid {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
 /*# sourceMappingURL=main.css.map */
