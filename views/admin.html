@@ -30,10 +30,6 @@
                     <i class="fas fa-align-left" id="sidebarCollapse"></i>
                     <span>DASHBOARD</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#btn-search-header"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
                 <div class="collapse navbar-collapse" id="btn-search-header">
                     <form class="form-inline my-2 my-lg-0">
@@ -75,10 +71,10 @@
                     </a>
                     <ul class="collapse subMenu" id="homeSubmenu">
                         <li class="sidebar-item ">
-                            <a href="./kk.html">List</a>
+                            <a href="#">Default</a>
                         </li>
                         <li class="sidebar-item ">
-                            <a href="#">Thêm</a>
+                            <a href="#">Alternative</a>
                         </li>
 
                     </ul>
@@ -117,15 +113,24 @@
                         <h3>Product List</h3>
                         <div class="row">
                             <div class="col-8">
-                                <button id="btnThem" type="button" class="btn mb-3 " data-toggle="modal"
+                                <button id="btnAdd" type="button" class="btn mb-3 " data-toggle="modal"
                                     data-target="#exampleModal">
                                     <i class="fa fa-plus-circle"></i>
                                     Add Product
                                 </button>
                             </div>
                             <div class="col-4">
-
-                            </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-10">
+                                    <select class="custom-select" id="selLoai">
+                                      <option value="">Choose Type</option>
+                                      <option value="iphone">Iphone</option>
+                                      <option value="Samsung">SamSung</option>             
+                                    </select>
+                                  </div>
+                                </div>
+                               
+                              </div>
                         </div>
                         <table class="table">
                             <thead>
@@ -143,28 +148,6 @@
                                 </tr>
                             </thead>
                             <tbody id="tableProduct">
-                                <tr>
-                                    <td> 1</td>
-                                    <td>iphoneX</td>
-                                    <td>1000</td>
-                                    <td>screen 68</td>
-                                    <td>2 camera 12 MP</td>
-                                    <td>7 MP</td>
-                                    <td>Img</td>
-                                    <td>Thiết kế mang tính đột phá</td>
-                                    <td>iphone</td>
-                                </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <th>iphoneX</th>
-                                    <th>1000</th>
-                                    <th>screen 68</th>
-                                    <th>2 camera 12 MP</th>
-                                    <th>7 MP</th>
-                                    <th>Img</th>
-                                    <th>Thiết kế mang tính đột phá</th>
-                                    <th>iphone</th>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -185,56 +168,56 @@
                     <div class="modal-body">
                         <form class="needs-validation" id="phoneForm">
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="phoneID">ID</label>
                                     <input type="text" class="form-control" id="phoneID" placeholder="Input ID" value=""
                                         required>
                                     <div id="invalidID" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="phoneName"> Phone Name</label>
                                     <input type="text" class="form-control" id="phoneName"
                                         placeholder="Input phone name" required>
-                                    <div id="invalidTen" class="invalid-form">
+                                    <div id="invalidName" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="typePhone">Type Phone</label>
                                     <select class="custom-select d-block w-100" id="typePhone" required>
                                         <option value="">Choose type</option>
-                                        <option value="loai1">Iphone</option>
-                                        <option value="loai2">SamSung</option>
+                                        <option value="iphone">Iphone</option>
+                                        <option value="Samsung">SamSung</option>
                                     </select>
-                                    <div id="invalidLoai" class="invalid-feedback">
+                                    <div id="invalidType" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="pricePhone">Price phone</label>
                                     <input type="text" class="form-control" id="pricePhone"
                                         placeholder="Input price phone" value="" required>
-                                    <div id="invalidGia" class="invalid-feedback">
+                                    <div id="invalidPrice" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="screenPhone">Screen phone</label>
                                     <input type="text" class="form-control" id="screenPhone"
                                         placeholder="Input screen phone" value="" required>
-                                    <div id="invalidGia" class="invalid-feedback">
+                                    <div id="invalidScreen" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="backCam">Back Camera</label>
                                     <input type="text" class="form-control" id="backCam" placeholder="Input back camera"
                                         value="" required>
-                                    <div id="invalidGia" class="invalid-feedback">
+                                    <div id="invalidBack" class="invalid-feedback">
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-6 mb-2">
                                     <label for="frontCam">Front Camera</label>
-                                    <input type="text" class="form-control" id="backCam"
+                                    <input type="text" class="form-control" id="frontCam"
                                         placeholder="Input front camera" value="" required>
-                                    <div id="invalidGia" class="invalid-feedback">
+                                    <div id="invalidFront" class="invalid-feedback">
                                     </div>
                                 </div>
 
@@ -247,20 +230,20 @@
                                         value="" required>
                                 </div>
                             </div>
-
+                            <div id="invalidImg" class="invalid-feedback">
+                            </div>
                             <div class="mb-3">
                                 <label for="descPhone">Describe</label>
                                 <textarea class="form-control" id="descPhone" rows="3"></textarea>
-                                <div id="invalidMoTa" class="invalid-form">
+                                <div id="invalidDesc" class="invalid-feedback">
                                 </div>
                             </div>
-
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-modal" id="btnCapNhat">Cập Nhật</button>
-                        <button type="button" class="btn btn-modal" id="btnThemMon">Thêm</button>
+                        <button type="button" class="btn btn-modal" id="btnUpdate">Update</button>
+                        <button type="button" class="btn btn-modal" id="btnAddPhone">Add</button>
                     </div>
                 </div>
             </div>
@@ -268,7 +251,6 @@
 
     </div>
 
-<!-- kakak -->
 
 
     <!-- -----------------------BS4----------------------- -->

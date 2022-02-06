@@ -1,8 +1,16 @@
-@mixin hearderText($color,$fs,$fw,$pd,$mg){
-    color:$color;
+@mixin hearderText($color, $fs, $fw, $pd, $mg) {
+    color: $color;
     font-size: $fs;
     font-weight: $fw;
     line-height: $lh;
-    padding:$pd;
+    padding: $pd;
     margin: $mg;
+}
+@mixin borderRose() {
+    border: 1px solid #e44cc4;
+    color: white;
+    &:focus {
+        box-shadow: 0 0 45px 0 rgba(8, 8, 8, 0.582);
+        color: #e44cc4;
+    }
 }
