@@ -142,35 +142,89 @@
                         <div class="col col-search col-md-9 col-sm-12 col-right">
                             <div class="hearder__search">
                                 <form class="form-inline my-2 my-lg-0">
-                                    <input type="text"  value="" placeholder="Search entire store here ..." class="form-control input-lg">
+                                    <input type="text" value="" placeholder="Search entire store here ..."
+                                        class="form-control input-lg">
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                                         <i class="fa fa-search"></i>
                                     </button>
-                                  </form>
+                                </form>
                             </div>
                             <div class="hearder__cart">
-                                <div class="cart__icon">
-                                    <div clas="icon__star">
-                                        <a href="">
-                                            <span>
-                                                <i class="fa fa-star"></i>
-                                                <em class="count">0</em>
-                                            </span><br>
-                                            <span>
-                                                Wishlist Products                                      
-                                            </span>
-                                        </a> 
-                                    </div>
-                                    <div class="icon__shop">
-                                        <a href="">
-                                            <span>
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <em class="count">0</em>
-                                            </span><br>
-                                            <span>
-                                                Shopping Cart
-                                            </span>
-                                        </a>                                
+                                <!-- <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <em class="count">0</em>
+                                    </span><br>
+                                    <span>
+                                        Wishlist Products
+                                    </span>
+                                </button> -->
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        <span>
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <em class="count">0</em>
+                                        </span><br>
+                                        <span>
+                                            Shopping Cart
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left:unset;">
+                                        <div class="cart-content">
+                                            <li>
+                                                <table class="table cart-product">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="card-product__img">
+                                                                <a href="#">
+                                                                    <img src="http://demo.towerthemes.com/tt_digitech/image/cache/catalog/product/1-80x80.jpg"
+                                                                        alt="">
+                                                                </a>
+                                                            </td>
+                                                            <td class="card-product__info">
+                                                                <a href="#" class="card__info--name">Iphone</a>
+                                                                <p class="card__info--quantity">x1</p>
+                                                                <p class="card__info--price">$89</p>
+                                                            </td>
+                                                            <td class="card-product__close">
+                                                                <i class="fa fa-times"></i>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                            <li>
+                                                <table class=" table-borderless card-pay">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text__left">Sub-Total:</td>
+                                                            <td class="text__right">11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text__left">Eco Tax (-2.00) :</td>
+                                                            <td class="text__right">11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text__left">VAT (20%) :</td>
+                                                            <td class="text__right">11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text__left">Total :</td>
+                                                            <td class="text__right">11</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="card-btn">
+                                            <button class="btn ">View cart</button>
+                                            <button class="btn ">Check out</button>
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>

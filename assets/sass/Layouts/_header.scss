@@ -1,51 +1,98 @@
-.container__logo{
+.container__logo {
     padding: 22px 0;
-    a{
+    a {
         float: left;
     }
-    ul{
+    ul {
         float: right;
         font-size: 13px !important;
-        text-decoration: none;           
+        text-decoration: none;
         text-transform: uppercase;
         padding: 13px 37px;
         position: relative;
-        
-        li{
-            a{
-                color:$color-dark-3 !important;
-                font-weight:$fw2;
-                &:hover{
+
+        li {
+            a {
+                color: $color-dark-3 !important;
+                font-weight: $fw2;
+                &:hover {
                     color: $color-blue-1 !important;
                 }
             }
         }
     }
 }
-.hearder__top{
+.hearder__top {
     padding-bottom: 80px;
 }
-.col-right{
+.col-right {
     display: flex;
-}.hearder__search{
+}
+.hearder__search {
     width: 100%;
-    .form-control{
-        width:90%;
-        border:2px solid $color-blue-1;
+    .form-control {
+        width: 90%;
+        border: 2px solid $color-blue-1;
         border-radius: 0;
-        
     }
-    .form-inline{
-        button{
-            border-color: $color-blue-1; 
+    .form-inline {
+        button {
+            border-color: $color-blue-1;
             background: $color-blue-1;
             color: $color-white-1;
-            border-radius:0;
+            border-radius: 0;
         }
     }
 }
-.hearder__cart{
-    .cart__icon{
-        display: flex;
+.hearder__cart {
+    .dropdown {
+        .dropdown-menu {
+            width: 350px;
+            left: unset !important;
+            right: -48%;
+            box-shadow: 0 0 50px 0 rgba(7, 7, 7, 0.1);
+            .cart-content {
+                padding: 10px 35px 0 35px ;
+                .cart-product {
+                    width: 100%;
+
+                    tbody {
+                        tr {
+                            border-bottom: 1px solid #ebebeb;
+                            td {
+                                border: none;
+                                a {
+                                    color: #212529;
+                                }
+                                p {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .card-pay {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .card-btn {
+                background-color: #37475b;
+                padding: 25px 35px;
+                button {
+                    display: block;
+                    background-color: #586985;
+                    width: 100%;
+                    color: white;
+                }
+                button:hover{
+                    background-color: $color-blue-1;
+                }
+                .btn:first-of-type {
+                    margin-bottom: 10px;
+                }
+            }
+        }
     }
 }
