@@ -132,10 +132,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-menu col-md-3 col-sm-12">
-                            <div class="vermagemenu visible-lg visible-md">
-                                <div class="content-vermagemenu">
-                                    <a href="">Iphone</a>
-                                    <a href="">SamSung</a>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <select class="custom-select" id="selLoai">
+                                        <option value="">Choose Type</option>
+                                        <option value="iphone">Iphone</option>
+                                        <option value="Samsung">SamSung</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -150,89 +153,67 @@
                                 </form>
                             </div>
                             <div class="hearder__cart">
-                                <!-- <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-expanded="false">
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal">
                                     <span>
-                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-shopping-cart"></i>
                                         <em class="count">0</em>
                                     </span><br>
                                     <span>
-                                        Wishlist Products
+                                        Shopping Cart
                                     </span>
-                                </button> -->
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary " type="button" id="dropdownMenuButton"
-                                        data-toggle="dropdown" aria-expanded="false">
-                                        <span>
-                                            <i class="fa fa-shopping-cart"></i>
-                                            <em class="count">0</em>
-                                        </span><br>
-                                        <span>
-                                            Shopping Cart
-                                        </span>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left:unset;">
-                                        <div class="cart-content">
-                                            <li>
-                                                <table class="table cart-product">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="card-product__img">
-                                                                <a href="#">
-                                                                    <img src="http://demo.towerthemes.com/tt_digitech/image/cache/catalog/product/1-80x80.jpg"
-                                                                        alt="">
-                                                                </a>
-                                                            </td>
-                                                            <td class="card-product__info">
-                                                                <a href="#" class="card__info--name">Iphone</a>
-                                                                <p class="card__info--quantity">x1</p>
-                                                                <p class="card__info--price">$89</p>
-                                                            </td>
-                                                            <td class="card-product__close">
-                                                                <i class="fa fa-times"></i>
-                                                            </td>
-                                                        </tr>
+                                </button>
 
-                                                    </tbody>
-                                                </table>
-                                            </li>
-                                            <li>
-                                                <table class=" table-borderless card-pay">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="text__left">Sub-Total:</td>
-                                                            <td class="text__right">11</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text__left">Eco Tax (-2.00) :</td>
-                                                            <td class="text__right">11</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text__left">VAT (20%) :</td>
-                                                            <td class="text__right">11</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text__left">Total :</td>
-                                                            <td class="text__right">11</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </li>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="cart-content">
+                                                    <li>
+                                                        <table class="table cart-product">
+                                                            <tbody class="cart-product-tbody">
+                                                                <tr>
+                                                                    <!-- Render cart -->
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </li>
+                                                    <li>
+                                                        <table class=" table-borderless card-pay">
+                                                            <tbody>
+                                                                <!-- Render cart pay -->
+                                                            </tbody>
+                                                        </table>
+                                                    </li>
+                                                </div>
+                                                <div class="card-btn">
+                                                    <button class="btn btnPay" onclick="payment()">Check out</button>
+                                                </div>
+
+
+                                            </div>
                                         </div>
-                                        <div class="card-btn">
-                                            <button class="btn ">View cart</button>
-                                            <button class="btn ">Check out</button>
-                                        </div>
-
-
                                     </div>
                                 </div>
                             </div>
 
+
                         </div>
+
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
 
@@ -245,7 +226,14 @@
             </div>
         </div>
     </div>
+    <div class="product">
+        <div class="container">
+            <div class="product__list row">
+                <!-- Render product -->
 
+            </div>
+        </div>
+    </div>
 
     <!-- -----------------------BS4----------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -254,6 +242,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <script type="module" src="./controllers/main.js"></script>
 </body>
 
 </html>

@@ -45,11 +45,8 @@
     }
 }
 .hearder__cart {
-    .dropdown {
-        .dropdown-menu {
-            width: 350px;
-            left: unset !important;
-            right: -48%;
+    .modal {
+        .modal-dialog {
             box-shadow: 0 0 50px 0 rgba(7, 7, 7, 0.1);
             .cart-content {
                 padding: 10px 35px 0 35px ;
