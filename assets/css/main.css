@@ -258,6 +258,10 @@ a:hover {
   padding: 20px 0;
 }
 
+.product__list .product__item .product__content--img img {
+  width: 300px;
+}
+
 .product__list .product__item .product__content--info {
   padding-bottom: 20px;
 }

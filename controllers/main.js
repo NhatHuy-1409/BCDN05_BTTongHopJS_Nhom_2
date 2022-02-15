@@ -6,7 +6,6 @@ import Cart from "../services/Cart.js";
 
 let productServices = new ProductServices();
 let cart = new Cart();
-let cartArr = cart.cartArray;
 
 //Set Local storage
 let setLocalStorage = (arr) => {
@@ -100,6 +99,7 @@ document.getElementById("selLoai").onclick = searchProducts;
 let addCart = (id) => {
     productServices.watchProduct(id)
         .then((result) => {
+            let cartArr = cart.cartArray;
             if (cartArr.some((item) => item.id === id)) {
                 alert("Sản phẩm này đã được thêm vào giỏ hàng");
             } else {
@@ -123,10 +123,10 @@ let renderCart = (arrCart) => {
     let totalMoney = 0;
     let sumQuantity = 0;
 
-
     for (let item of arrCart) {
         let { id, name, price, quantity } = item;
-        totalMoney += price * quantity;
+        let numPrice = price.replace(/[^0-9]/g, '');
+        totalMoney += numPrice * quantity;
         sumQuantity += Number(quantity);
         content += `
         <tr>
@@ -150,18 +150,18 @@ let renderCart = (arrCart) => {
             </td>
         </tr>
         `;
-        contentPay += `
+        contentPay = `
         <tr>
             <td class="text__left">Sub-Total:</td>
-            <td class="text__right">${totalMoney}</td>
+            <td class="text__right">${totalMoney} $</td>
         </tr>
         <tr>
             <td class="text__left">VAT (20%) :</td>
-            <td class="text__right">${totalMoney*0.2}</td>
+            <td class="text__right">${totalMoney*0.2} $</td>
         </tr>
         <tr class="totalMoney">
             <td class="text__left">Total :</td>
-            <td class="text__right">${totalMoney + totalMoney*0.2}</td>
+            <td class="text__right">${totalMoney + totalMoney*0.2} $</td>
         </tr>
         `;
         numProduct = `${sumQuantity}`;
@@ -173,6 +173,7 @@ let renderCart = (arrCart) => {
 }
 //Thay đổi số lượng giỏ hàng
 let changeQuantity = (action, id) => {
+    let cartArr = cart.cartArray;
     cartArr.map((item) => {
         let newQuantity = item.quantity;
         if (item.id === id) {
@@ -192,6 +193,7 @@ let changeQuantity = (action, id) => {
 window.changeQuantity = changeQuantity;
 //Xóa giỏ hàng
 let deleteCart = (id) => {
+    let cartArr = cart.cartArray;
     cart.deleteCart(id);
     renderCart(cartArr);
     setLocalStorage(cartArr);
@@ -201,6 +203,7 @@ window.deleteCart = deleteCart;
 let getLocalStorage = () => {
     if (localStorage.getItem("Product") != null) {
         let cartArr = JSON.parse(localStorage.getItem("Product"));
+        cart.cartArray = cartArr;
         renderCart(cartArr);
     }
 }
@@ -208,6 +211,7 @@ getLocalStorage();
 //Thanh toán
 let payment = () => {
     let cartArr = [];
+    cart.cartArray = cartArr;
     renderCart(cartArr);
     setLocalStorage(cartArr);
     document.querySelector(".close").click();
