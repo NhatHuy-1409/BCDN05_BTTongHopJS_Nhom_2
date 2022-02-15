@@ -131,7 +131,7 @@
             <div class="hearder__bottom">
                 <div class="container">
                     <div class="row">
-                        <div class="col col-menu col-md-3 col-sm-12">
+                        <div class="col-menu col-3">
                             <div class="form-group row">
                                 <div class="col-sm-10">
                                     <select class="custom-select" id="selLoai">
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col col-search col-md-9 col-sm-12 col-right">
+                        <div class=" col-search col-7">
                             <div class="hearder__search">
                                 <form class="form-inline my-2 my-lg-0">
                                     <input type="text" value="" placeholder="Search entire store here ..."
@@ -152,62 +152,60 @@
                                     </button>
                                 </form>
                             </div>
-                            <div class="hearder__cart">
-                                <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#exampleModal">
-                                    <span>
-                                        <i class="fa fa-shopping-cart"></i>
-                                        <em class="count">0</em>
-                                    </span><br>
-                                    <span>
-                                        Shopping Cart
-                                    </span>
-                                </button>
+                            
+                        </div>
+                        <div class="hearder__cart col-2">
+                            <button type="button" class="btn btn-card" data-toggle="modal"
+                                data-target="#exampleModal">
+                                <span>
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <em class="count">0</em>
+                                </span><br>
+                                <span>
+                                    Shopping Cart
+                                </span>
+                            </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="cart-content">
+                                                <li>
+                                                    <table class="table cart-product">
+                                                        <tbody class="cart-product-tbody">
+                                                            <tr>
+                                                                <!-- Render cart -->
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </li>
+                                                <li>
+                                                    <table class=" table-borderless card-pay">
+                                                        <tbody>
+                                                            <!-- Render cart pay -->
+                                                        </tbody>
+                                                    </table>
+                                                </li>
                                             </div>
-                                            <div class="modal-body">
-                                                <div class="cart-content">
-                                                    <li>
-                                                        <table class="table cart-product">
-                                                            <tbody class="cart-product-tbody">
-                                                                <tr>
-                                                                    <!-- Render cart -->
-                                                                </tr>
-
-                                                            </tbody>
-                                                        </table>
-                                                    </li>
-                                                    <li>
-                                                        <table class=" table-borderless card-pay">
-                                                            <tbody>
-                                                                <!-- Render cart pay -->
-                                                            </tbody>
-                                                        </table>
-                                                    </li>
-                                                </div>
-                                                <div class="card-btn">
-                                                    <button class="btn btnPay" onclick="payment()">Check out</button>
-                                                </div>
-
-
-                                            </div>
+                                            
+                                        </div>
+                                        <div class="card-btn">
+                                            <button class="btn btnPay" onclick="payment()">Check out</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
 
                     </div>
@@ -233,6 +231,24 @@
 
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <p>@2022</p>
+                </div>
+                <div class="footer__right">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
     <!-- -----------------------BS4----------------------- -->

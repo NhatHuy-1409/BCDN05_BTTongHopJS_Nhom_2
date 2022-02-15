@@ -103,7 +103,7 @@ let addCart = (id) => {
             if (cartArr.some((item) => item.id === id)) {
                 alert("Sản phẩm này đã được thêm vào giỏ hàng");
             } else {
-                let cartItem = new CartItem(id, result.data.name, result.data.price, 1);
+                let cartItem = new CartItem(id, result.data.name, result.data.price, result.data.img, 1);
                 cartArr.push(cartItem);
             }
             renderCart(cartArr);
@@ -124,7 +124,8 @@ let renderCart = (arrCart) => {
     let sumQuantity = 0;
 
     for (let item of arrCart) {
-        let { id, name, price, quantity } = item;
+        console.log(item);
+        let { id, name, price, img, quantity } = item;
         let numPrice = price.replace(/[^0-9]/g, '');
         totalMoney += numPrice * quantity;
         sumQuantity += Number(quantity);
@@ -132,7 +133,7 @@ let renderCart = (arrCart) => {
         <tr>
             <td class="card-product__img">
                 <a href="#">
-                    <img src="http://demo.towerthemes.com/tt_digitech/image/cache/catalog/product/1-80x80.jpg"
+                    <img src="${img}"
                         alt="">
                 </a>
             </td>
@@ -157,11 +158,11 @@ let renderCart = (arrCart) => {
         </tr>
         <tr>
             <td class="text__left">VAT (20%) :</td>
-            <td class="text__right">${totalMoney*0.2} $</td>
+            <td class="text__right">${totalMoney * 0.2} $</td>
         </tr>
         <tr class="totalMoney">
             <td class="text__left">Total :</td>
-            <td class="text__right">${totalMoney + totalMoney*0.2} $</td>
+            <td class="text__right">${totalMoney + totalMoney * 0.2} $</td>
         </tr>
         `;
         numProduct = `${sumQuantity}`;
@@ -183,7 +184,7 @@ let changeQuantity = (action, id) => {
                 newQuantity--;
             }
             //Lưu vào giá trị mới vào mảng
-            let newCart = new CartItem(item.id, item.name, item.price, newQuantity);
+            let newCart = new CartItem(item.id, item.name, item.price,item.img, newQuantity);
             cart.updateCart(id, newCart);
             setLocalStorage(cartArr);
             renderCart(cartArr);

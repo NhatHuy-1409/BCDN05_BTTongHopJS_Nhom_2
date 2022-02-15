@@ -170,6 +170,10 @@ a:hover {
   border-radius: 0;
 }
 
+.hearder__cart .btn-card {
+  border: 2px solid #2e6ed5;
+}
+
 .hearder__cart .modal .modal-dialog {
   -webkit-box-shadow: 0 0 50px 0 rgba(7, 7, 7, 0.1);
           box-shadow: 0 0 50px 0 rgba(7, 7, 7, 0.1);
@@ -199,6 +203,10 @@ a:hover {
   margin-bottom: 0;
 }
 
+.hearder__cart .modal .modal-dialog .cart-content .cart-product tbody tr td img {
+  width: 100px;
+}
+
 .hearder__cart .modal .modal-dialog .cart-content .card-pay {
   width: 100%;
   margin-bottom: 20px;
@@ -220,8 +228,19 @@ a:hover {
   background-color: #2e6ed5;
 }
 
-.hearder__cart .modal .modal-dialog .card-btn .btn:first-of-type {
-  margin-bottom: 10px;
+.hearder__bottom .custom-select {
+  border: 2px solid #2e6ed5;
+  height: 56px;
+}
+
+.hearder__bottom .hearder__search input {
+  height: 56px;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.hearder__bottom .hearder__search button {
+  height: 56px;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .carousel {
@@ -260,6 +279,8 @@ a:hover {
 
 .product__list .product__item .product__content--img img {
   width: 300px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .product__list .product__item .product__content--info {
@@ -291,15 +312,6 @@ a:hover {
   padding: 5px;
 }
 
-.product__list .product__item .product__content--bottom:hover button {
-  background-color: #363f4d;
-  color: white;
-}
-
-.product__list .product__item .product__content--bottom:hover button:hover {
-  background-color: #2e6ed5;
-}
-
 .product__list .product__item .product__content--bottom.active .col-8 button {
   display: none;
 }
@@ -307,6 +319,48 @@ a:hover {
 .product__list .product__item .product__content--bottom.active .col-8 .quantity {
   display: block;
   color: red;
+}
+
+.product__list .product__item:hover .product__content--bottom button {
+  background-color: #363f4d;
+  color: white;
+}
+
+.product__list .product__item:hover .product__content--bottom button:hover {
+  background-color: #2e6ed5;
+}
+
+.product__list .product__item:hover .product__content--img img {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.footer {
+  background-color: #2e6ed5;
+  padding: 50px 0;
+}
+
+.footer .footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer .footer__content .footer__right ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .footer__content .footer__right ul li {
+  padding-right: 20px;
+}
+
+.footer .footer__content .footer__right a {
+  color: #191919;
 }
 
 .wrapper {

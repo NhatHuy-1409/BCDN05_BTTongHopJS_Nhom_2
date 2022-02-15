@@ -18,8 +18,10 @@
                     padding: 20px 0;
                     img{
                         width: 300px;
+                        transition: all .3s ease;
                     }
                 }
+
                 &--info{
                     padding-bottom: 20px;
                     span{
@@ -46,15 +48,7 @@
                     }
 
                 }
-                &--bottom:hover{
-                    button{
-                        background-color: #363f4d;
-                        color: white;
-                    }
-                    button:hover{
-                        background-color: #2e6ed5;
-                    }
-                }
+
                 &--bottom.active .col-8{
                     button{
                         display: none;
@@ -66,5 +60,24 @@
                 }
             }
         }
+        .product__item:hover{
+            .product__content{
+                &--bottom{
+                    button{
+                        background-color: #363f4d;
+                        color: white;
+                    }
+                    button:hover{
+                        background-color: #2e6ed5;
+                    }
+                }
+                &--img{
+                    img{
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+        }
+
     }
 }

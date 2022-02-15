@@ -45,6 +45,9 @@
     }
 }
 .hearder__cart {
+    .btn-card{
+        border: 2px solid #2e6ed5;
+    }
     .modal {
         .modal-dialog {
             box-shadow: 0 0 50px 0 rgba(7, 7, 7, 0.1);
@@ -63,6 +66,9 @@
                                 }
                                 p {
                                     margin-bottom: 0;
+                                }
+                                img{
+                                    width: 100px;
                                 }
                             }
                         }
@@ -86,10 +92,23 @@
                 button:hover{
                     background-color: $color-blue-1;
                 }
-                .btn:first-of-type {
-                    margin-bottom: 10px;
-                }
             }
+        }
+    }
+}
+.hearder__bottom{
+    .custom-select{
+        border: 2px solid #2e6ed5;
+        height: 56px;
+    }
+    .hearder__search{
+        input{
+            height: 56px;
+            border-radius: 0.25rem 0 0 0.25rem ;
+        }
+        button{
+            height: 56px;
+            border-radius: 0 0.25rem 0.25rem 0;
         }
     }
 }
