@@ -1,3 +1,6 @@
 Nhật Huy : Admin
 Đồng Hải: Cart & Header & Carousel
 Trường Sơn: Product & Footer
+
+link video: https://drive.google.com/drive/folders/1TARvDFn2V_TIzeYRc5bwrcP1qqRCsknq?usp=sharing
+Link web:https://nhathuy-1409.github.io/BCDN05_BTTongHopJS_Nhom_2/
