@@ -11,7 +11,9 @@ let showTable = (arr) => {
     let count = 0;
     for (let product of arr) {
         count++;
-        let { name, price, screen, backCamera, frontCamera, img, desc, type, id } = product;
+        console.log(product);
+
+        let { name, price, img, backCamera, frontCamera, screen, desc, type, id } = product;
         content += `
         <tr>
             <td>${count}</td>
@@ -20,9 +22,9 @@ let showTable = (arr) => {
                 <img src="${img}" alt="">
             </td>
             <td>${price}</td>
-            <td>${screen}</td>
-            <td>${backCamera}</td>
-            <td>${frontCamera}</td>
+            <td class="1">${screen}</td>
+            <td class="2">${backCamera}</td>
+            <td class="3" >${frontCamera}</td>
             <td>${desc}</td>
             <td>${type}</td>
             <td>
@@ -62,20 +64,21 @@ let addPhone = () => {
 
     let namePhone = document.getElementById("phoneName").value;
     let price = document.getElementById("pricePhone").value;
+    let img = document.getElementById("imgPhone").value;
     let screen = document.getElementById("screenPhone").value;
     let backCam = document.getElementById("backCam").value;
     let frontCam = document.getElementById("frontCam").value;
-    let img = document.getElementById("imgPhone").value;
     let desc = document.getElementById("descPhone").value;
     let type = document.getElementById("typePhone").value;
-    let isValid = checkValidation(namePhone, price, screen, backCam, frontCam, img, desc);
+    let isValid = checkValidation(namePhone, price, img, screen, backCam, frontCam, desc);
     if (isValid) {
-        let phone = new PhoneProducts(namePhone, price, screen, backCam, frontCam, img, desc, type);
+        let phone = new PhoneProducts(namePhone, price, img, backCam, frontCam, screen, desc, type);
+
         productServices.addProduct(phone)
             .then(() => {
                 getPhone();
                 document.querySelector(".close").click();
-                
+
             })
             .catch((error) => {
                 console.log(error);
@@ -107,7 +110,7 @@ let watchPhone = (id) => {
     productServices.watchProduct(id)
         .then((result) => {
 
-            let { name, price, screen, backCamera, frontCamera, img, desc, type, id } = result.data;
+            let { name, price, img, backCamera, frontCamera, screen, desc, type, id } = result.data;
 
             document.getElementById("phoneName").value = name;
             document.getElementById("pricePhone").value = price;
@@ -137,9 +140,10 @@ let updatePhone = () => {
     let type = document.getElementById("typePhone").value;
     let id = document.getElementById("phoneID").value;
 
-    let isValid = checkValidation(namePhone, price, screen, backCam, frontCam, img, desc);
+    let isValid = checkValidation(namePhone, price, img, backCam, frontCam, screen, desc);
     if (isValid) {
-        let phone = new PhoneProducts(namePhone, price, screen, backCam, frontCam, img, desc, type);
+        let phone = new PhoneProducts(namePhone, price, img, backCam, frontCam, screen, desc, type);
+        console.log(phone);
         productServices.updateProduct(id, phone)
             .then(() => {
                 getPhone();
@@ -154,7 +158,7 @@ let updatePhone = () => {
 document.querySelector("#btnUpdate").addEventListener("click", updatePhone);
 
 //Kiểm tra thông tin
-let checkValidation = (namePhone, price, screen, backCam, frontCam, img, desc) => {
+let checkValidation = (namePhone, price, img, screen, backCam, frontCam, desc) => {
     var isValid = true;
     // phoneName: không được để trống, không ký tự đặc biệt (theo english)
     isValid &= validation.checkEmpty(namePhone, "invalidName", "Hãy nhập tên của bạn") && validation.checkName(namePhone, "invalidName", "Tên không chứa ký tự đặc biệt (ngoại trừ khoảng trắng)");
@@ -194,7 +198,7 @@ document.getElementById("pricePhone").onkeyup = () => {
     let price = document.getElementById("pricePhone").value;
     if (price == "") {
         validation.checkEmpty(price, "invalidPrice", "Hãy nhập giá phone");
-    }else{
+    } else {
         validation.checkNumber(price, "invalidPrice", "Vui lòng chỉ nhập số và kí tự $");
     }
 }
@@ -229,22 +233,22 @@ document.getElementById("descPhone").onkeyup = () => {
 let searchProduct = () => {
 
     productServices.getProduct()
-    .then((result) => {
-        let typePhone = document.getElementById("selLoai").value
-        let arrType = [];
-        result.data.map(function(phone){
-            if(phone.type == typePhone){
-                arrType.push(phone);
-            }else if(typePhone == ""){
-                arrType = result.data;
-                console.log(result.data);
-            }
+        .then((result) => {
+            let typePhone = document.getElementById("selLoai").value
+            let arrType = [];
+            result.data.map(function (phone) {
+                if (phone.type == typePhone) {
+                    arrType.push(phone);
+                } else if (typePhone == "") {
+                    arrType = result.data;
+                    console.log(result.data);
+                }
+            });
+            showTable(arrType);
+        })
+        .catch((error) => {
+            console.log(error);
         });
-        showTable(arrType);
-    })
-    .catch((error) => {
-        console.log(error);
-    });    
 
 }
 document.getElementById("selLoai").onclick = searchProduct;
