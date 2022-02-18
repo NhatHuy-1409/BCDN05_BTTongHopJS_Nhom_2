@@ -11,8 +11,6 @@ let showTable = (arr) => {
     let count = 0;
     for (let product of arr) {
         count++;
-        console.log(product);
-
         let { name, price, img, backCamera, frontCamera, screen, desc, type, id } = product;
         content += `
         <tr>
