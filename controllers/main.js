@@ -18,7 +18,7 @@ let showProduct = (arrProduct) => {
     for (let product of arrProduct) {
         let { name, price, screen, backCamera, frontCamera, img, desc, type, id } = product;
         content += `
-        <div class="product__item col-4">
+        <div class="product__item col-sm-6 col-md-4">
         <div class="product__content">
             <a class="product__content--name" href="#">${name}</a>
             <div class="product__content--star">
